@@ -1,12 +1,6 @@
 	$(document).ready(function() {
 
-		
-		$('.gallery-item').magnificPopup({
-	  type: 'image'
-	  // other options
-	});
-
-	
+			
 		$('.gallery-item').magnificPopup({
 	  type: 'image',
 	  gallery:{
@@ -15,10 +9,10 @@
 	  }
 	});
 		
-		$("#search").keypress(function(){
+		$("#search").keyup(function(){
       var current_query = $(this).val();
-      $('.light-gallery > .item > a').hide();
-      $('.light-gallery > .item > a').each(function(){
+      $('.gallery-item').hide();
+      $('.gallery-item').each(function(){
         var current_keyword = $(this).attr("data-sub-html");
         if(current_keyword.indexOf(current_query) >= 0){
           $(this).show();
